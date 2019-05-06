@@ -6,7 +6,7 @@ import datetime as d
 
 def notification(url, r):
     session = requests.Session()
-    data = session.get(url)
+    data = session.get(url,verify=False)
     data.encoding = data.apparent_encoding
     soup = BeautifulSoup(data.text, features="lxml")
     try:
@@ -22,7 +22,7 @@ def notification(url, r):
         notice_url = []
         for i in soup.find_all("a"):
             if i.get("title") is not None and i.get("href")[:8] == "../info/":
-                spxy_url = "http://spxy.sicau.edu.cn"
+                spxy_url = "https://spxy.sicau.edu.cn"
                 notice_set.append(i.get("title"))
                 notice_url.append(spxy_url + i.get("href")[2:])
         # 获取本地上的信息
@@ -70,7 +70,7 @@ def notification(url, r):
     log.close()
 
 # 本科教学管理
-url = "http://spxy.sicau.edu.cn/bkjxgl/rcgl.htm"
+url = "https://spxy.sicau.edu.cn/bkjxgl/rcgl.htm"
 r = []
 user_file = open('./user.txt')
 while True:

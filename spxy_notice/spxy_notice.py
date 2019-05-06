@@ -6,7 +6,7 @@ import datetime as d
 
 def notification(url, r):
     session = requests.Session()
-    data = session.get(url)
+    data = session.get(url,verify=False)
     data.encoding = data.apparent_encoding
     soup = BeautifulSoup(data.text, features="lxml")
     try:
@@ -70,7 +70,7 @@ def notification(url, r):
     log.close()
 
 # 通知公告
-url = "http://spxy.sicau.edu.cn/xwjtz/tzgg.htm"
+url = "https://spxy.sicau.edu.cn/xwjtz/tzgg.htm"
 # 本科教学管理
 #url = "http://spxy.sicau.edu.cn/bkjxgl/rcgl.htm"
 r = []
