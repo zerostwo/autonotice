@@ -12,11 +12,11 @@ def notification(url, r):
     try:
         log = open('./auto_notice.log', "a+")
         t = d.datetime.now().strftime("%Y-%m-%d %H:%M")
-        yag = yagmail.SMTP(user="zerostwo@126.com", password="981211Dd", host='smtp.126.com')
+        yag = yagmail.SMTP(user="sicauer@126.com", password="981211Dd", host='smtp.126.com')
         a = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>食品学院本科教学管理通知</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/></head>'
         b = '<body style="margin: 0; padding: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><h2 align="center">News!</h2></tr><tr>'
         c = ''
-        dd = '</table><footer><h5 align = "center"><b>&copy;2019 <a href="https://sicauer.com" style="color: #000000;">Sicauer</a></b></h5></footer></body></html>'
+        dd = '</table><footer><p align = "center" style="text-align: center; font-size: 11px;">&copy;2019 <a href="https://sicauer.com" style="color: #000000;text-decoration:none;">Sicauer</a>, All Rights Reserved</p></footer></body></html>'
         # 获取教务网上的信息
         notice_set = []
         notice_url = []
