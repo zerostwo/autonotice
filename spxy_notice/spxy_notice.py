@@ -74,7 +74,7 @@ url = "https://spxy.sicau.edu.cn/xwjtz/tzgg.htm"
 # 本科教学管理
 #url = "http://spxy.sicau.edu.cn/bkjxgl/rcgl.htm"
 r = []
-user_file = open('./user.txt')
+user_file = open('../user.txt')
 while True:
     line = user_file.readline()
     if line:

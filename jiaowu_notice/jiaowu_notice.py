@@ -79,7 +79,7 @@ def log_sicau(id, pwd, r):
     log.close()
 
 r = []
-user_file = open('./user.txt')
+user_file = open('../user.txt')
 while True:
     line = user_file.readline()
     if line:
