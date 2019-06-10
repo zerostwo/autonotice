@@ -17,7 +17,7 @@ def notification(url, r):
         b = '<body style="margin: 0; padding: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><h2 align="center">News!</h2></tr><tr>'
         c = ''
         dd = '</table><footer><p align = "center" style="text-align: center; font-size: 11px;">&copy;2019 <a href="https://sicauer.com" style="color: #000000;text-decoration:none;">Sicauer</a>, All Rights Reserved</p></footer></body></html>'
-        # 获取教务网上的信息
+        # 获取网络上的信息 
         notice_set = []
         notice_url = []
         for i in soup.find_all("a"):
@@ -35,7 +35,7 @@ def notification(url, r):
             else:
                 break
         info_file.close()
-        # 比较教务网上和本科信息的差别
+        # 比较网上和本地信息的差别
         compare = [i for i in notice_set if i not in info_set]
         # 判断
         if len(compare) == 0:
@@ -46,15 +46,10 @@ def notification(url, r):
             for i in range(0, len(compare)):
                 print(compare[i], file=info_file)
                 notice = str(i+1) + '. ' "<a href = '" + notice_url[i] + "' style='text-decoration:none;'>" + compare[i] + "</a>"
-                # notice = date_set[i] + compare[i]
-                # contents.append(notice)
                 c += '<tr><p align="center">' + notice + '</p></tr>'
                 print(t, "添加成功", compare[i], file=log)
             try:
-                # html = '<p align = "center">Copyright 2019 <a href="https://zerostwo.github.io">Zerostwo</a></p>'
-                # contents.append(html)
                 con = a + b + '<h4 align="center">' + t + '</h4></tr>' + c + dd
-#                 print(con)
                 for i in r:
                     yag.send(to=i, subject='食品学院通知公告', contents=con)
                 print(t, "发送成功", file=log)
@@ -71,8 +66,6 @@ def notification(url, r):
 
 # 通知公告
 url = "https://spxy.sicau.edu.cn/xwjtz/tzgg.htm"
-# 本科教学管理
-#url = "http://spxy.sicau.edu.cn/bkjxgl/rcgl.htm"
 r = []
 user_file = open('../user.txt')
 while True:

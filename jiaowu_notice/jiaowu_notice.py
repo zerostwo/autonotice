@@ -25,7 +25,6 @@ def log_sicau(id, pwd, r):
         log = open('./auto_notice.log', "a+")
         t = d.datetime.now().strftime("%Y-%m-%d %H:%M")
         yag = yagmail.SMTP(user="sicauer@126.com", password="981211Dd", host='smtp.126.com')
-        # contents = ['<h3 align="center">News!</h3>']
         a = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>教务处最新动态</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/></head>'
         b = '<body style="margin: 0; padding: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><h2 align="center">News!</h2></tr><tr>'
         c = ''
