@@ -72,7 +72,7 @@ def notification(url, r):
 # 本科教学管理
 url = "https://spxy.sicau.edu.cn/bkjxgl/rcgl.htm"
 r = []
-user_file = open('../user.txt')
+user_file = open('../users.txt')
 while True:
     line = user_file.readline()
     if line:

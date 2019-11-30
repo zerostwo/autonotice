@@ -67,7 +67,7 @@ def notification(url, r):
 # 通知公告
 url = "https://spxy.sicau.edu.cn/xwjtz/tzgg.htm"
 r = []
-user_file = open('../user.txt')
+user_file = open('../users.txt')
 while True:
     line = user_file.readline()
     if line:
